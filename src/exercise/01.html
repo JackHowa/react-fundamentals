@@ -4,22 +4,22 @@
 <!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
 <!-- 🐨 Then create a <script type="module"> for your JavaScript -->
 <body>
-  <div id="root"></div>
-</body>
+  <script type="module">
+    // extra credit
+    let rootElement = document.createElement('div');
+    rootElement.id = 'root';
 
-<!-- doesn't matter if outside body tag -->
-<!-- https://stackoverflow.com/questions/3037725/is-it-wrong-to-place-the-script-tag-after-the-body-tag -->
+    document.body.appendChild(rootElement);
 
-<script type="module">
-  let targetElement = document.createElement('div');
-  targetElement.textContent = 'Hello World';
-  targetElement.className = 'container';
-  let rootNode = document.getElementById('root');
-
-  rootNode.append(targetElement);
+    // it's invalid to include script outside of body
+    // via https://stackoverflow.com/a/3037792/7491536
+    let targetElement = document.createElement('div');
+    targetElement.textContent = 'Hello World';
+    targetElement.className = 'container';
   
-</script>
-
+    rootElement.append(targetElement);
+  </script>
+</body>
 
 <!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
 <!--   💰 div.textContent = '...' -->
