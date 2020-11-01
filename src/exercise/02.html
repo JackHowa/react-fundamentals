@@ -10,9 +10,23 @@
   <script type="module">
     const rootElement = document.getElementById('root')
 
-    const elementProps = { "className": 'container', children: "Hello World"}
+    // extra credit 
+
+    const HelloSpan = React.createElement('span', {
+        'children': 'Hello'
+    })
+
+    const WorldSpan = React.createElement('span',{
+      children: "World"
+    })
+
+    const elementProps = { "className": 'container'}
     const elementType = 'div';
-    const reactElement = React.createElement(elementType, elementProps);
+    
+    // adding an empty child for space
+    const reactElement = React.createElement(elementType, elementProps, HelloSpan, ' ', WorldSpan);
+
+
     ReactDOM.render(reactElement, rootElement);
   </script>
 </body>
